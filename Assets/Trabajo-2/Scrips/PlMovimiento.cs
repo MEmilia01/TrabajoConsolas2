@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class PlMovimiento : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Datos personaje")]
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jump = 6f;
+
+    [Header("Scripts")]
+    [SerializeField] ManagerNivel managerexterno;
+    [SerializeField] ManagerCanvas canvas;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
