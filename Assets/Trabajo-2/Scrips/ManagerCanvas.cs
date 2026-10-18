@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.U2D;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class ManagerCanvas : MonoBehaviour
 {
@@ -7,9 +10,12 @@ public class ManagerCanvas : MonoBehaviour
     [SerializeField] GameObject menucontroles;
     [SerializeField] GameObject hub;
 
+    public Slider slice;
+
     void Start()
     {
-        AbrirMControles();
+
+        AbrirHub();
     }
 
     void Update()
@@ -36,5 +42,13 @@ public class ManagerCanvas : MonoBehaviour
         hub.SetActive(false);
         menucontroles.SetActive(true);
         menuopciones.SetActive(false);
+    }
+    public void Reinicio()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Salir()
+    {
+        Debug.Log("works");
     }
 }
