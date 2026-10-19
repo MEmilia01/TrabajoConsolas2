@@ -30,8 +30,8 @@ public class ManagerCanvas : MonoBehaviour
 
     void Start()
     {
-        //ActSlice();
-        AbrirHub();
+        numen = 0;
+        AbrirMensaje();
     }
 
     void Update()
@@ -39,25 +39,6 @@ public class ManagerCanvas : MonoBehaviour
 
     }
 
-
-    //public void ActSlice()
-    //{
-    //    if (slice == null) { Debug.Log("Falta la slice"); return; }
-    //    else
-    //    {
-    //        slice.onValueChanged.AddListener(OnSliderValueChanged);
-    //        slice.minValue = niveldatos.inicionum;
-    //        slice.maxValue = niveldatos.finalnum;
-            
-    //        //inicio de partida
-    //        slice.value = niveldatos.inicionum;
-    //    }
-    //}
-    //void OnSliderValueChanged(float value)
-    //{
-    //    // Escalar el objeto según el valor del Slider
-    //    float newScale = Mathf.Lerp(niveldatos.inicionum, niveldatos.finalnum, value);
-    //}
 
     private void SeleccionarBoton(GameObject boton)
     {
@@ -86,7 +67,7 @@ public class ManagerCanvas : MonoBehaviour
         switch (numen)
         {
             case 0:
-                mensajesadv.text = "Happy happy happy (yeppie feliz)";
+                mensajesadv.text = "Recorre el camino hasta tu nido, si tienes dudas mira controles";
                 break;
             case 1:
                 mensajesadv.text = "Se necesita un mando para funcionar";
@@ -150,6 +131,7 @@ public class ManagerCanvas : MonoBehaviour
     }
     public void Salir()
     {
+        Application.Quit();
         Debug.Log("works");
     }
 }
