@@ -54,7 +54,6 @@ public class ManagerCanvas : MonoBehaviour
 
         if (pausada)
         {
-            Debug.Log("se paso a segundo plano");
             numen = 3;
             AbrirMensaje();
         }
@@ -67,7 +66,8 @@ public class ManagerCanvas : MonoBehaviour
         switch (numen)
         {
             case 0:
-                mensajesadv.text = "Recorre el camino hasta tu nido, si tienes dudas mira controles";
+                mensajesadv.text = "Recorre el camino hasta tu nido, si tienes dudas mira controles." +
+                    "La version : " + Application.version;
                 break;
             case 1:
                 mensajesadv.text = "Se necesita un mando para funcionar";
