@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField] Vector2 moveInput;
     [SerializeField] GameObject fuego;
+    [SerializeField] private Slider barraProgreso;
+    [SerializeField] private Transform jugador;
 
     private void Start()
     {
@@ -33,6 +36,21 @@ public class Player : MonoBehaviour
 
         //ignora la gravedad.
         rb.gravityScale = 0f;
+        if (barraProgreso == null)
+        {
+            Debug.LogError("Falta asignar el Slider en el Inspector.");
+            enabled = false;
+            return;
+        }
+
+        if (jugador == null)
+        {
+            jugador = transform;
+        }
+
+        barraProgreso.minValue = 0f;
+        barraProgreso.maxValue = 1f;
+        barraProgreso.value = 0f;
     }
 
     public void OnMove(InputValue value)
@@ -49,6 +67,27 @@ public class Player : MonoBehaviour
         StartCoroutine(FuegoActivo());
     }
 
+    public void Mandos()
+    {
+        if (Gamepad.current != null)
+        {
+            Debug.Log("Hay un mando conectado: " + Gamepad.current.displayName);
+            return;
+        }
+        else
+        {
+            Debug.Log("No hay ningún mando conectado.");
+            canvas.numen = 1;
+            canvas.AbrirMensaje();
+        }
+    }
+
+
+
+    public float GetProgresoEntreNumeros(float valorActual, float a, float b)
+    {
+        return Mathf.InverseLerp(a, b, valorActual);
+    }
     private void ActualizarSprite()
     {
         if (moveInput.x > 0.01f)
@@ -72,12 +111,18 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Mandos();
+
         Vector2 targetVelocity = moveInput * speed;
 
         rb.linearVelocity = targetVelocity;
 
         if(numactual < managerexterno.inicionum) {  numactual = managerexterno.inicionum; }
         else if (numactual > managerexterno.finalnum) { numactual = managerexterno.finalnum; }
+
+        float progreso = GetProgresoEntreNumeros(jugador.position.x, managerexterno.inicionum, managerexterno.finalnum);
+
+        barraProgreso.value = progreso;
 
         ActualizarSprite();
     }
