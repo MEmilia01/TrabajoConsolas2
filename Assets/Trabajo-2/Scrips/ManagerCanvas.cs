@@ -1,8 +1,9 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ManagerCanvas : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class ManagerCanvas : MonoBehaviour
     [SerializeField] GameObject hub;
     [SerializeField] GameObject mensaje;
 
+    [Header("Objetos")]
     public UnityEngine.UI.Slider slice;
     public GameObject targetObject;
+    [SerializeField] TextMeshProUGUI mensajesadv;
 
-    public ManagerNivel niveldatos;
+    [Header("Script")]
+    [SerializeField] ManagerNivel niveldatos;
 
     void Start()
     {

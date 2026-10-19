@@ -1472,9 +1472,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366748449}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: mensaje
+      value: 
+      objectReference: {fileID: 7089755933424196358}
+    - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: niveldatos
       value: 
       objectReference: {fileID: 153019437}
+    - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: mensajesadv
+      value: 
+      objectReference: {fileID: 7089755933424196357}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: menuopciones
       value: 
@@ -1508,6 +1516,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 276b1b92449a52340934451072028e8b, type: 3}
+--- !u!114 &7089755933424196357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8197429835304365759, guid: 276b1b92449a52340934451072028e8b, type: 3}
+  m_PrefabInstance: {fileID: 7089755933424196356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &7089755933424196358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9082458741478768789, guid: 276b1b92449a52340934451072028e8b, type: 3}
+  m_PrefabInstance: {fileID: 7089755933424196356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

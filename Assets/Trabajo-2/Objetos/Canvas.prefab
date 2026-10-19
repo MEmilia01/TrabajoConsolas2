@@ -748,7 +748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300336293213772960}
         m_TargetAssemblyTypeName: ManagerCanvas, Assembly-CSharp
-        m_MethodName: AbrirMOpciones
+        m_MethodName: AbrirHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2357,6 +2357,7 @@ MonoBehaviour:
   menuopciones: {fileID: 0}
   menucontroles: {fileID: 0}
   hub: {fileID: 0}
+  mensaje: {fileID: 0}
   slice: {fileID: 0}
   targetObject: {fileID: 0}
   niveldatos: {fileID: 0}
