@@ -1459,6 +1459,10 @@ PrefabInstance:
       propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6137402717236942602, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: hub
       value: 
@@ -1492,6 +1496,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7080723946171906780, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914210649095026350, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
