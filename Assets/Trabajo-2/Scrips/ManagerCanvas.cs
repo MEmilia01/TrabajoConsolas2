@@ -97,6 +97,9 @@ public class ManagerCanvas : MonoBehaviour
             case 3:
                 mensajesadv.text = "Has dejado el juego en segundo plano";
                 break;
+            case 4:
+                mensajesadv.text = "Has Ganado YEPPIEE!!";
+                break;
         }
     }
 

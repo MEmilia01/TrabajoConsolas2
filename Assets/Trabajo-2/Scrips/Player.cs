@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -16,17 +17,19 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     [SerializeField] Vector2 moveInput;
+    [SerializeField] GameObject fuego;
 
     private void Start()
     {
         transform.position = managerexterno.puntospawn.transform.position;
         numactual = 0f;
+        fuego.SetActive(false);
     }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
 
         //ignora la gravedad.
         rb.gravityScale = 0f;
@@ -41,6 +44,10 @@ public class Player : MonoBehaviour
     {
         canvas.AbrirMOpciones();
     }
+    public void OnAtaque(InputValue value)
+    {
+        StartCoroutine(FuegoActivo());
+    }
 
     private void ActualizarSprite()
     {
@@ -54,7 +61,13 @@ public class Player : MonoBehaviour
             sprite.flipX = false;
             numactual--;
         }
-        Debug.Log(numactual);
+    }
+    IEnumerator FuegoActivo()
+    {
+        fuego.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        fuego.SetActive(false);        
     }
 
     private void FixedUpdate()

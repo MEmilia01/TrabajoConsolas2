@@ -4,9 +4,14 @@ public class Meta : MonoBehaviour
 {
     public ManagerCanvas canvas;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        canvas.AbrirMensaje();
-        canvas.numen = 3;
+        Debug.Log(other.name);
+        if (other.CompareTag("Player"))
+        {
+            canvas.numen = 4;
+            Debug.Log("llegado");
+            canvas.AbrirMensaje();
+        }
     }
 }
