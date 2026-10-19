@@ -71,12 +71,12 @@ public class Player : MonoBehaviour
     {
         if (Gamepad.current != null)
         {
-            Debug.Log("Hay un mando conectado: " + Gamepad.current.displayName);
+            //Debug.Log("Hay un mando conectado: " + Gamepad.current.displayName);
             return;
         }
         else
         {
-            Debug.Log("No hay ningún mando conectado.");
+            Debug.LogError("No hay ningún mando conectado.");
             canvas.numen = 1;
             canvas.AbrirMensaje();
         }

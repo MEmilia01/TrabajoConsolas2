@@ -132,6 +132,5 @@ public class ManagerCanvas : MonoBehaviour
     public void Salir()
     {
         Application.Quit();
-        Debug.Log("works");
     }
 }
