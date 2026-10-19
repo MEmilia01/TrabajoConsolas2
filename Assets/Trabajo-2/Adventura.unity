@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerNivel
   puntospawn: {fileID: 1739875587}
-  objetosquemables: []
+  inicionum: 0
+  finalnum: 10
 --- !u!4 &153019438
 Transform:
   m_ObjectHideFlags: 0
@@ -689,6 +690,22 @@ Transform:
   - {fileID: 1752219684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1366748447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5105160109915429515, guid: 276b1b92449a52340934451072028e8b, type: 3}
+  m_PrefabInstance: {fileID: 7089755933424196356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1366748449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6092940681175971292, guid: 276b1b92449a52340934451072028e8b, type: 3}
+  m_PrefabInstance: {fileID: 7089755933424196356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366748447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &1388083157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,14 +1455,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092940681175971292, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: hub
       value: 
       objectReference: {fileID: 94715563}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: slice
+      value: 
+      objectReference: {fileID: 1366748449}
+    - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: niveldatos
+      value: 
+      objectReference: {fileID: 153019437}
+    - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: menuopciones
       value: 
       objectReference: {fileID: 499370933}
+    - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1366748447}
     - target: {fileID: 6300336293213772960, guid: 276b1b92449a52340934451072028e8b, type: 3}
       propertyPath: menucontroles
       value: 

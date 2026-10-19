@@ -10,6 +10,7 @@ public class ManagerCanvas : MonoBehaviour
     [SerializeField] GameObject menuopciones;
     [SerializeField] GameObject menucontroles;
     [SerializeField] GameObject hub;
+    [SerializeField] GameObject mensaje;
 
     public UnityEngine.UI.Slider slice;
     public GameObject targetObject;
@@ -24,17 +25,20 @@ public class ManagerCanvas : MonoBehaviour
 
     void Update()
     {
-        slice.onValueChanged.AddListener(OnSliderValueChanged);
         
     }
+
 
     public void ActSlice()
     {
         if (slice == null) { Debug.Log("Falta la slice"); return; }
         else
         {
+            slice.onValueChanged.AddListener(OnSliderValueChanged);
             slice.minValue = niveldatos.inicionum;
             slice.maxValue = niveldatos.finalnum;
+            
+            //inicio de partida
             slice.value = niveldatos.inicionum;
         }
     }
@@ -42,8 +46,6 @@ public class ManagerCanvas : MonoBehaviour
     {
         // Escalar el objeto según el valor del Slider
         float newScale = Mathf.Lerp(niveldatos.inicionum, niveldatos.finalnum, value);
-        targetObject.transform.localScale = new Vector3(newScale, newScale, newScale);
-
     }
 
 
@@ -53,18 +55,28 @@ public class ManagerCanvas : MonoBehaviour
         hub.SetActive(true);
         menucontroles.SetActive(false);
         menuopciones.SetActive(false);
+        mensaje.SetActive(false);
     }
     public void AbrirMOpciones()
     {
         hub.SetActive(false);
         menucontroles.SetActive(false);
         menuopciones.SetActive(true);
+        mensaje.SetActive(false);
     }
     public void AbrirMControles()
     {
         hub.SetActive(false);
         menucontroles.SetActive(true);
         menuopciones.SetActive(false);
+        mensaje.SetActive(false);
+    }
+    public void AbrirMensaje()
+    {
+        hub.SetActive(false);
+        menucontroles.SetActive(false);
+        menuopciones.SetActive(false);
+        mensaje.SetActive(true);
     }
     public void Reinicio()
     {

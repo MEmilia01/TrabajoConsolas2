@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField] Vector2 moveInput;
 
+    private void Start()
+    {
+        transform.position = managerexterno.puntospawn.transform.position;
+    }
 
     private void Awake()
     {
