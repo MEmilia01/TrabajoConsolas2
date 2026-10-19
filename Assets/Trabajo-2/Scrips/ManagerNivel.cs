@@ -8,6 +8,6 @@ public class ManagerNivel : MonoBehaviour
     [Header("Objetos necesarios")]
     public Transform puntospawn;
     public float inicionum = 0f;
-    public float finalnum = 800f;
+    public float finalnum = 600f;
 
 }

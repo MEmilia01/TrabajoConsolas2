@@ -17,9 +17,19 @@
                     "priority": 0
                 },
                 {
-                    "name": "Jump",
+                    "name": "Ataque",
                     "type": "Button",
                     "id": "00ee7866-ee9c-44f6-8dcd-ae12dd23450b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Menus",
+                    "type": "Button",
+                    "id": "95e8f59e-4805-429e-aa75-82bc9f3b483a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -46,7 +56,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "Ataque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9c9fe93-b679-4071-a6d2-43e7b18ca182",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

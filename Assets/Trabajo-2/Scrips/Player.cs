@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [Header("Datos personaje")]
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 20f;
+    public float numactual;
 
     [Header("Scripts y demas")]
     [SerializeField] ManagerNivel managerexterno;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         transform.position = managerexterno.puntospawn.transform.position;
+        numactual = 0f;
     }
 
     private void Awake()
@@ -35,16 +37,24 @@ public class Player : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
+    public void OnMenus(InputValue value)
+    {
+        canvas.AbrirMOpciones();
+    }
+
     private void ActualizarSprite()
     {
         if (moveInput.x > 0.01f)
         {
             sprite.flipX = true;
+            numactual++;
         }
         else if (moveInput.x < -0.01f)
         {
             sprite.flipX = false;
+            numactual--;
         }
+        Debug.Log(numactual);
     }
 
     private void FixedUpdate()
@@ -52,6 +62,9 @@ public class Player : MonoBehaviour
         Vector2 targetVelocity = moveInput * speed;
 
         rb.linearVelocity = targetVelocity;
+
+        if(numactual < managerexterno.inicionum) {  numactual = managerexterno.inicionum; }
+        else if (numactual > managerexterno.finalnum) { numactual = managerexterno.finalnum; }
 
         ActualizarSprite();
     }
